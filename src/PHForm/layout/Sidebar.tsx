@@ -1,7 +1,7 @@
 import { Layout, Menu } from "antd";
 // import { useAppSelector } from "../../redux/feathers/hooks";
 import { useAppSelector } from "../../redux/hooks";
-import { selectCurrentUser } from "../../redux/features/carAuthSlice";
+import { selectCurrentUser, TUser } from "../../redux/features/carAuthSlice";
 import { adminPaths } from "../../routes/admin.routes";
 import { userPaths } from "../../routes/user.routes";
 import { sidebarItemsGenerator } from "../../utils/sidebarItemsGenerator";
@@ -17,10 +17,12 @@ const Sidebar = () => {
   const user = useAppSelector(selectCurrentUser);
   console.log("Limon callll");
   console.log(user);
-
+  if (!user) {
+    return null;
+  }
   let sidebarItems;
 
-  switch (user!.role) {
+  switch ((user as TUser)!.role) {
     case userRole.ADMIN:
       sidebarItems = sidebarItemsGenerator(adminPaths, userRole.ADMIN);
       break;

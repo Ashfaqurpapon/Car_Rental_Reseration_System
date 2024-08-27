@@ -1,5 +1,3 @@
-import React from "react";
-
 import HeroSectionImage from "./Car Website – 1@2x.png";
 
 // Dummy data for featured cars

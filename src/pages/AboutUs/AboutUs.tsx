@@ -1,4 +1,3 @@
-import React from "react";
 import "./AboutUs.css"; // Import the CSS file
 
 const AboutUs = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./UserDashboard.css"; // Import the CSS for styling
 
 const UserDashboard = () => {
