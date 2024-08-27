@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   carUserlogout,
   selectCurrentUser,
-  useCurrentToken,
+  TUser,
 } from "../../redux/features/carAuthSlice";
-import HomePageMain from "../../pages/HomePageMain";
+
 // import { useCurrentToken } from "../../redux/feathers/auth/authSlice";
 
 type TprotectedRoute = {
@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children, role }: TprotectedRoute) => {
   if (!user) {
     console.log("Unsigned user");
     return <Navigate to="/" replace={true} />;
-  } else if (user.role != role) {
+  } else if ((user as TUser).role != role) {
     dispatch(carUserlogout());
     return <Navigate to="/carSignIn" replace={true} />;
   }
