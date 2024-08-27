@@ -1,4 +1,7 @@
-import HeroSectionImage from "./Car Website – 1@2x.png";
+import React from "react";
+import "./Navbar.css"; // Import the CSS file
+
+import HomeImage from "./Car Website – 1@2x.png";
 
 // Dummy data for featured cars
 const featuredCars = [
@@ -59,7 +62,7 @@ const Navbar = () => {
             <p>Find the perfect car for your journey</p>
           </div>
           <div className="image">
-            <img src={HeroSectionImage} alt="Car Rental" />
+            <img src={HomeImage} alt="Car Rental" />
           </div>
         </div>
       </div>

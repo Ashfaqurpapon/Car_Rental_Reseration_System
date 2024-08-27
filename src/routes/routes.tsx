@@ -6,6 +6,8 @@ import { userPaths } from "./user.routes";
 import SignUpPage from "../AuthPages/SignUpPage";
 import CarSignIn from "../AuthPages/CarSignIn";
 import ProtectedRoute from "../PHForm/layout/ProtectedRoute";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import BookingCar from "../pages/BookingCar/BookingCar";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: "/carSignIn",
     element: <CarSignIn />,
+  },
+  {
+    path: "/about",
+    element: <AboutUs />,
+  },
+  {
+    path: "/bookingCar",
+    element: <BookingCar />,
   },
 ]);
 export default router;

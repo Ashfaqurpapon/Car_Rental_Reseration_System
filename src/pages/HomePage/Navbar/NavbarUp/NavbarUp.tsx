@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AuthComponents from "../../../../AuthPages/AuthComponents/AuthComponents";
 import jeep from "./jeep.png";
 import "./NavbarUp.css"; // Import the CSS file
@@ -15,10 +16,10 @@ const NavbarUp = () => {
             <a>Home</a>
           </li>
           <li>
-            <a href="#About">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#Booking">Booking</a>
+            <Link to="/bookingCar">Booking</Link>
           </li>
           <li>
             <a href="#contact">Contact</a>

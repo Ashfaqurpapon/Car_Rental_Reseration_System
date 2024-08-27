@@ -1,10 +1,13 @@
 import { Layout } from "antd";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 // import { useAppDispatch } from "../../redux/feathers/hooks";
 // import { logout } from "../../redux/feathers/auth/authSlice";
 import Sidebar from "./Sidebar";
 
 import NavbarUp from "../../pages/HomePage/Navbar/NavbarUp/NavbarUp";
+import Navbar from "../../pages/HomePage/Navbar/Navbar";
+import CarListingPage from "../../pages/Car Listing Page/CarListingPage";
+
 const { Content } = Layout;
 // import { adminSidebarItems } from "../../routes/admin.routes";
 
@@ -14,7 +17,7 @@ const MainLayout = () => {
       <Sidebar />
       <Layout>
         <NavbarUp />
-
+        <CarListingPage />
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
@@ -22,7 +25,8 @@ const MainLayout = () => {
               minHeight: 360,
             }}
           >
-            <Outlet />
+            {/* <Outlet /> */}
+            <Navbar />
           </div>
         </Content>
       </Layout>

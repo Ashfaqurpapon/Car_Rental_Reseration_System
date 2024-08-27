@@ -8,6 +8,7 @@ import { verifyToken } from "../redux/verifyToken";
 import { useAppDispatch } from "../redux/hooks";
 import { useCarLoginMutation } from "../redux/features/carAuthApi";
 import { setCarUser, TUser } from "../redux/features/carAuthSlice";
+import { TCarUser } from "../types/CarTypes";
 
 const CarSignIn = () => {
   const navigate = useNavigate();
@@ -25,12 +26,11 @@ const CarSignIn = () => {
         password: data.password,
       };
       const res = await login(userInfo).unwrap();
-      console.log("Limon toekn");
-      console.log(res.token);
 
       const user = verifyToken(res.token) as TUser;
+      const carUser = res.data as TCarUser;
 
-      dispatch(setCarUser({ user: user, token: res.token }));
+      dispatch(setCarUser({ user: user, token: res.token, carUser: carUser }));
       toast.success("Logged in", { id: toastId, duration: 2000 });
       //// this
 
