@@ -2,7 +2,6 @@ import Navbar from "../pages/HomePage/Navbar/Navbar";
 import Myprofile from "../pages/UserInfoPage/Myprofile";
 import BokingDetails from "../tempCompo/BokingDetails";
 import BookingForm from "../tempCompo/BookingForm";
-import UserDashboard from "../tempCompo/UserDashboard";
 
 export const userPaths = [
   {
