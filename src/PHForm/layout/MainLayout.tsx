@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 
 import NavbarUp from "../../pages/HomePage/Navbar/NavbarUp/NavbarUp";
 import Navbar from "../../pages/HomePage/Navbar/Navbar";
-import CarListingPage from "../../pages/Car Listing Page/CarListingPage";
+//import CarListingPage from "../../pages/Car Listing Page/CarListingPage";
 
 const { Content } = Layout;
 // import { adminSidebarItems } from "../../routes/admin.routes";
@@ -17,7 +17,7 @@ const MainLayout = () => {
       <Sidebar />
       <Layout>
         <NavbarUp />
-        <CarListingPage />
+        {/* <CarListingPage /> */}
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{

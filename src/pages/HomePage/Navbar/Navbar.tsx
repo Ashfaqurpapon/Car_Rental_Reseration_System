@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.css"; // Import the CSS file
 
 import HomeImage from "./Car Website – 1@2x.png";
