@@ -21,6 +21,9 @@ const Sidebar = () => {
     return null;
   }
   let sidebarItems;
+  if (!user) {
+    return;
+  }
 
   switch ((user as TUser)!.role) {
     case userRole.ADMIN:

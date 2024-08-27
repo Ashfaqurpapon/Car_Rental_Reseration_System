@@ -1,3 +1,4 @@
+import AuthComponents from "../../../../AuthPages/AuthComponents/AuthComponents";
 import jeep from "./jeep.png";
 import "./NavbarUp.css"; // Import the CSS file
 
@@ -24,12 +25,13 @@ const NavbarUp = () => {
           </li>
         </ul>
         <div className="header-btn">
-          <a href="#" className="sign-up">
+          <AuthComponents />
+          {/* <a href="#" className="sign-up">
             Sign Up
-          </a>
-          <a href="#" className="sign-in">
+          </a> */}
+          {/* <a href="#" className="sign-in">
             Sign In
-          </a>
+          </a> */}
         </div>
       </header>
     </>

@@ -1,20 +1,29 @@
 import { ReactNode } from "react";
 // import { useAppSelector } from "../../redux/feathers/hooks";
 import { Navigate } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
+  carUserlogout,
   selectCurrentUser,
   useCurrentToken,
 } from "../../redux/features/carAuthSlice";
+import HomePageMain from "../../pages/HomePageMain";
 // import { useCurrentToken } from "../../redux/feathers/auth/authSlice";
 
-const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-  const token = useAppSelector(useCurrentToken);
+type TprotectedRoute = {
+  children: ReactNode;
+  role: string;
+};
+
+const ProtectedRoute = ({ children, role }: TprotectedRoute) => {
   const user = useAppSelector(selectCurrentUser);
-  console.log("Limon token");
-  console.log(token);
-  console.log(user);
-  if (!token) {
+  const dispatch = useAppDispatch();
+
+  if (!user) {
+    console.log("Unsigned user");
+    return <Navigate to="/" replace={true} />;
+  } else if (user.role != role) {
+    dispatch(carUserlogout());
     return <Navigate to="/carSignIn" replace={true} />;
   }
 

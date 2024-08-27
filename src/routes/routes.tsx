@@ -5,20 +5,33 @@ import { adminPaths } from "./admin.routes";
 import { userPaths } from "./user.routes";
 import SignUpPage from "../AuthPages/SignUpPage";
 import CarSignIn from "../AuthPages/CarSignIn";
+import ProtectedRoute from "../PHForm/layout/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <App />
+
+      // <HomePageMain></HomePageMain>
+    ),
   },
   {
     path: "/admin",
-    element: <App />,
+    element: (
+      <ProtectedRoute role="admin">
+        <App />
+      </ProtectedRoute>
+    ),
     children: routeGenerator(adminPaths),
   },
   {
     path: "/user",
-    element: <App />,
+    element: (
+      <ProtectedRoute role="user">
+        <App />
+      </ProtectedRoute>
+    ),
     children: routeGenerator(userPaths),
   },
   {
