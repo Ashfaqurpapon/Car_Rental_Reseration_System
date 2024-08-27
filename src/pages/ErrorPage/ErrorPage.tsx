@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./ErrorPage.css"; // Import the CSS file
 
 const ErrorPage = () => {
