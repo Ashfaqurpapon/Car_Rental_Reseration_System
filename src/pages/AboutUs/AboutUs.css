@@ -1,0 +1,100 @@
+/* AboutUs.css */
+
+.about-us-container {
+  margin: 40px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.company-overview,
+.team-section,
+.car-variety-section,
+.commitment-section,
+.contact-section {
+  margin-bottom: 40px;
+}
+
+.company-description,
+.company-mission,
+.company-vision {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.team-section {
+  text-align: center;
+}
+
+.team-profiles {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-member {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.team-name {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+.team-role {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.car-variety-section {
+  text-align: center;
+}
+
+.car-variety-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.car-types-list {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.car-types-list li {
+  margin: 5px 0;
+}
+
+.commitment-section .commitment-description {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-info {
+  font-size: 16px;
+  line-height: 1.6;
+}
