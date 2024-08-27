@@ -1,0 +1,30 @@
+.car-details-page {
+  padding: 20px;
+}
+
+.car-details-container {
+  display: flex;
+  gap: 20px;
+}
+
+.car-info {
+  max-width: 400px;
+}
+
+.car-info p {
+  margin: 5px 0;
+}
+
+.book-now-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-now-btn:hover {
+  background-color: #218838;
+}

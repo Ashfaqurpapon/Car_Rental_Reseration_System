@@ -6,7 +6,9 @@ import Sidebar from "./Sidebar";
 
 import NavbarUp from "../../pages/HomePage/Navbar/NavbarUp/NavbarUp";
 import Navbar from "../../pages/HomePage/Navbar/Navbar";
-//import CarListingPage from "../../pages/Car Listing Page/CarListingPage";
+import CarListingPage from "../../pages/Car Listing Page/CarListingPage";
+import { Outlet } from "react-router-dom";
+import CarDetailsPage from "../../pages/Car Details Page/CarDetailsPage";
 
 const { Content } = Layout;
 // import { adminSidebarItems } from "../../routes/admin.routes";
@@ -17,7 +19,8 @@ const MainLayout = () => {
       <Sidebar />
       <Layout>
         <NavbarUp />
-        {/* <CarListingPage /> */}
+        <CarListingPage />
+        <CarDetailsPage />
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
@@ -25,8 +28,8 @@ const MainLayout = () => {
               minHeight: 360,
             }}
           >
-            {/* <Outlet /> */}
-            <Navbar />
+            <Outlet />
+            {/* <Navbar /> */}
           </div>
         </Content>
       </Layout>

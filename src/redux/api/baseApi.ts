@@ -72,7 +72,6 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
     //baseUrl: "http://localhost:8000/api",
     baseUrl: "https://productsweb.vercel.app/api",
-    credentials: "include",
   }),
   endpoints: () => ({}),
 });

@@ -1,4 +1,4 @@
-import AdminDashboard from "../tempCompo/AdminDashboard";
+import Navbar from "../pages/HomePage/Navbar/Navbar";
 import CreateAcademicSemester from "../tempCompo/CreateAcademicSemester";
 import CreateAdmin from "../tempCompo/CreateAdmin";
 
@@ -6,7 +6,7 @@ export const adminPaths = [
   {
     name: "Dashboard",
     path: "dashboard",
-    element: <AdminDashboard />,
+    element: <Navbar />,
   },
   {
     name: "Academic Management",
