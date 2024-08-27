@@ -70,7 +70,8 @@ import {
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:8000/api",
+    //baseUrl: "http://localhost:8000/api",
+    baseUrl: "https://productsweb.vercel.app/api",
     credentials: "include",
   }),
   endpoints: () => ({}),
