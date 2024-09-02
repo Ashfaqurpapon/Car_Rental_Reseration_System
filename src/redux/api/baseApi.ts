@@ -7,22 +7,22 @@ import {
   //   FetchArgs,
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
-// import { RootState } from "../feathers/store";
+import { RootState } from "../store";
 // import { setUser } from "../feathers/auth/authSlice";
 
-// const baseQuery = fetchBaseQuery({
-//   baseUrl: "http://localhost:8000/api",
-//   credentials: "include",
-//   prepareHeaders: (headers, { getState }) => {
-//     const token = (getState() as RootState).auth.token;
+const baseQuery = fetchBaseQuery({
+  baseUrl: "http://localhost:8000/api",
+  // baseUrl: "https://productsweb.vercel.app/api",
+  prepareHeaders: (headers, { getState }) => {
+    const token = (getState() as RootState).carAuth.token;
 
-//     if (token) {
-//       headers.set("authorization", `${token}`);
-//     }
+    if (token) {
+      headers.set("authorization", `Bearer ${token}`);
+    }
 
-//     return headers;
-//   },
-// });
+    return headers;
+  },
+});
 
 // const baseQueryWithRefreshToken: BaseQueryFn<
 //   FetchArgs,
@@ -69,9 +69,7 @@ import {
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({
-    //baseUrl: "http://localhost:8000/api",
-    baseUrl: "https://productsweb.vercel.app/api",
-  }),
+  baseQuery: baseQuery,
+  tagTypes: ["cars", "bookings", "users"],
   endpoints: () => ({}),
 });

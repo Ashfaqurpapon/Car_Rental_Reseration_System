@@ -15,6 +15,7 @@ const AuthComponents = () => {
   const handleOut = () => {
     console.log("btttnnnnnnnn");
     dispatch(carUserlogout());
+    navigate("/home");
   };
 
   const handleLogIn = () => {

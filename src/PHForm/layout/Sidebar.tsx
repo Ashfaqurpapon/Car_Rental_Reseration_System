@@ -5,6 +5,7 @@ import { selectCurrentUser, TUser } from "../../redux/features/carAuthSlice";
 import { adminPaths } from "../../routes/admin.routes";
 import { userPaths } from "../../routes/user.routes";
 import { sidebarItemsGenerator } from "../../utils/sidebarItemsGenerator";
+import Navbar from "../../pages/HomePage/Navbar/Navbar";
 
 const { Sider } = Layout;
 
@@ -17,12 +18,13 @@ const Sidebar = () => {
   const user = useAppSelector(selectCurrentUser);
   console.log("Limon callll");
   console.log(user);
-  if (!user) {
-    return null;
-  }
+  // if (!user) {
+  //   return null;
+  // }
   let sidebarItems;
   if (!user) {
-    return;
+    // return <Navbar />;
+    return null;
   }
 
   switch ((user as TUser)!.role) {
@@ -38,24 +40,23 @@ const Sidebar = () => {
   }
 
   return (
-    <Sider breakpoint="lg" collapsedWidth="0">
+    <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
+      style={{ height: "100vh", position: "sticky", top: "0", left: "0" }}
+    >
       <div
         style={{
-          color: "white",
-
           height: "4rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        <h1>PH Uni</h1>
-      </div>
+      ></div>
       <Menu
         theme="dark"
         mode="inline"
         defaultSelectedKeys={["4"]}
-        ////
         items={sidebarItems}
       />
     </Sider>

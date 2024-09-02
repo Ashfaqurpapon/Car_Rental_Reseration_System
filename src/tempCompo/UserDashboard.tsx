@@ -1,9 +1,7 @@
+import CommonDashboard from "./CommonDashboard";
+
 const UserDashboard = () => {
-  return (
-    <div>
-      <h1>This is UserDashboard</h1>
-    </div>
-  );
+  return <CommonDashboard />;
 };
 
 export default UserDashboard;

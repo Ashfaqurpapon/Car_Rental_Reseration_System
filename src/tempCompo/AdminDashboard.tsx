@@ -1,7 +1,9 @@
+import CommonDashboard from "./CommonDashboard";
+
 const AdminDashboard = () => {
   return (
     <div>
-      <h1>This is AdminDashboard</h1>
+      <CommonDashboard />
     </div>
   );
 };

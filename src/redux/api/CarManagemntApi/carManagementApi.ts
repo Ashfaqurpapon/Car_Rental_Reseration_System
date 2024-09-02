@@ -9,6 +9,7 @@ const carManagementApi = baseApi.injectEndpoints({
         url: "/cars",
         method: "GET",
       }),
+      providesTags: ["cars"],
       transformResponse: (response: TResponseRedux<CarTypes[]>) => {
         return {
           data: response.data,
@@ -16,13 +17,51 @@ const carManagementApi = baseApi.injectEndpoints({
         };
       },
     }),
-    // addAcademicSemester: builder.mutation({
-    //   query: (data) => ({
-    //     url: "/academic-semesters/create-academic-semester",
-    //     method: "POST",
-    //     body: data,
-    //   }),
-    // }),
+    addaCar: builder.mutation({
+      query: (data) => ({
+        url: "/cars",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["cars"],
+    }),
+    updateCar: builder.mutation({
+      query: (data) => ({
+        url: `/cars/${data.id}`,
+        method: "PUT",
+        body: data.payload,
+      }),
+      invalidatesTags: ["cars"],
+    }),
+    deleteCar: builder.mutation({
+      query: (data) => ({
+        url: `/cars/${data.id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["cars"],
+    }),
+
+    bookACar: builder.mutation({
+      query: (data) => ({
+        url: "/bookings",
+        method: "POST",
+        body: data,
+      }),
+    }),
+
+    getSingleCar: builder.query({
+      query: (carId: string) => ({
+        url: `/cars/${carId}`,
+        method: "GET",
+      }),
+      transformResponse: (response: TResponseRedux<CarTypes>) => {
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
+
     // getAcademicDepartments: builder.query({
     //   query: () => {
     //     return { url: "/academic-departments", method: "GET" };
@@ -44,4 +83,11 @@ const carManagementApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetAllCarsQuery } = carManagementApi;
+export const {
+  useAddaCarMutation,
+  useDeleteCarMutation,
+  useBookACarMutation,
+  useGetSingleCarQuery,
+  useUpdateCarMutation,
+  useGetAllCarsQuery,
+} = carManagementApi;

@@ -1,32 +1,15 @@
-import Navbar from "../pages/HomePage/Navbar/Navbar";
-import Myprofile from "../pages/UserInfoPage/Myprofile";
-import BokingDetails from "../tempCompo/BokingDetails";
-import BookingForm from "../tempCompo/BookingForm";
-
+import CarListingPage from "../pages/Car Listing Page/CarListingPage/CarListingPage";
+import MyAllBookings from "../pages/UserInfoPage/MyAllBookings";
+import UserDashboard from "../tempCompo/UserDashboard";
 export const userPaths = [
   {
-    name: "Dashboard",
+    name: "My Dashboard",
     path: "dashboard",
-    element: <Navbar />,
+    element: <UserDashboard />,
   },
   {
-    name: "User Management",
-    children: [
-      {
-        name: "My Profile",
-        path: "my-profile",
-        element: <Myprofile />,
-      },
-      {
-        name: "Booking Detals",
-        path: "booking-details",
-        element: <BokingDetails />,
-      },
-      {
-        name: "Booking Form",
-        path: "booking-form",
-        element: <BookingForm />,
-      },
-    ],
+    name: "My All Bookings",
+    path: "my-all-bookings",
+    element: <MyAllBookings />,
   },
 ];

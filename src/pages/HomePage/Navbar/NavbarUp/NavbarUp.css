@@ -14,12 +14,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: black;
+  background: hsl(0, 0%, 96%);
   padding: 15px 100px;
 }
 
 .logo img {
   width: 40px;
+}
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fe5b3d; /* Text color */
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  color: #fe5b3d;
 }
 
 .navbar {

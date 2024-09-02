@@ -7,22 +7,25 @@ const NavbarUp = () => {
   return (
     <>
       <header>
-        <a href="#" className="logo">
-          <img src={jeep} alt="CarRent CO." />
-        </a>
+        <Link className="logo" to="/home">
+          <div className="logo-container">
+            <img src={jeep} alt="CarRent CO." />
+            <span className="logo-text">CarRent CO.</span>
+          </div>
+        </Link>
         <div className="bx bx-menu" id="menu-icon"></div>
         <ul className="navbar">
           <li>
-            <a>Home</a>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/bookingCar">Booking</Link>
+            <Link to="/cars">Cars</Link>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
         <div className="header-btn">

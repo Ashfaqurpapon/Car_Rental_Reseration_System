@@ -1,30 +1,42 @@
-import Navbar from "../pages/HomePage/Navbar/Navbar";
-import CreateAcademicSemester from "../tempCompo/CreateAcademicSemester";
-import CreateAdmin from "../tempCompo/CreateAdmin";
+import CarListingForDelete from "../pages/Car Listing Page/CarListingForDelete";
+import CarListingForUpdate from "../pages/Car Listing Page/CarListingForUpdate";
+import CreateCar from "../pages/CarPage/CreateCar";
+import AllBookinksForAdmin from "../pages/UserInfoPage/AllBookinksForAdmin/AllBookinksForAdmin";
+import AdminDashboard from "../tempCompo/AdminDashboard";
 
 export const adminPaths = [
   {
-    name: "Dashboard",
+    name: "My Dashboard",
     path: "dashboard",
-    element: <Navbar />,
+    element: <AdminDashboard />,
   },
   {
-    name: "Academic Management",
+    name: "Car Management",
     children: [
       {
-        name: "Create A. Semester",
-        path: "create-academic-semester",
-        element: <CreateAcademicSemester />,
+        name: "Create A Car",
+        path: "creat-a-car",
+        element: <CreateCar />,
+      },
+      {
+        name: "Update A Car",
+        path: "update-a-car",
+        element: <CarListingForUpdate />,
+      },
+      {
+        name: "Delete Cars",
+        path: "delete-a-car",
+        element: <CarListingForDelete />,
       },
     ],
   },
   {
-    name: "User Management",
+    name: "Bookings Management",
     children: [
       {
-        name: "Create Admin",
-        path: "create-admin",
-        element: <CreateAdmin />,
+        name: "Get all bookings",
+        path: "get-all-bookings",
+        element: <AllBookinksForAdmin />,
       },
     ],
   },

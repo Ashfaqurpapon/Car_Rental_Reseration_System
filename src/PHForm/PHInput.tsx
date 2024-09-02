@@ -5,15 +5,18 @@ type TInputProps = {
   type: string;
   name: string;
   label?: string;
+  required?: boolean;
 };
 
-const PHInput = ({ type, name, label }: TInputProps) => {
+const PHInput = ({ type, name, label, required }: TInputProps) => {
   return (
     <div style={{ marginBottom: "20px" }}>
       {label ? label : null}
       <Controller
         name={name}
-        render={({ field }) => <Input {...field} type={type} id={name} />}
+        render={({ field }) => (
+          <Input {...field} type={type} id={name} required={required} />
+        )}
       />
     </div>
   );

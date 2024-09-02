@@ -1,7 +1,7 @@
 import { Button, Flex, Row } from "antd";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import PHForm from "../PHForm/PHForm";
 import PHInput from "../PHForm/PHInput";
 import { verifyToken } from "../redux/verifyToken";
@@ -13,8 +13,15 @@ import { TCarUser } from "../types/CarTypes";
 const CarSignIn = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
   const [login] = useCarLoginMutation();
+
+  const location = useLocation();
+  const { email, password } = location.state || {};
+
+  const defaultFormValue = {
+    email: email,
+    password: password,
+  };
 
   const onSubmit = async (data: FieldValues) => {
     console.log(data);
@@ -34,10 +41,10 @@ const CarSignIn = () => {
       toast.success("Logged in", { id: toastId, duration: 2000 });
       //// this
 
-      navigate(`/${user.role}/dashboard`);
+      navigate(`/cars`);
       console.log("successfully logged in");
     } catch (err) {
-      toast.error("Something went wrong", { id: toastId, duration: 2000 });
+      toast.error("papon", { id: toastId, duration: 2000 });
     }
   };
 
@@ -47,9 +54,14 @@ const CarSignIn = () => {
 
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
-      <PHForm onSubmit={onSubmit}>
-        <PHInput type="text" name="email" label="Email" />
-        <PHInput type="text" name="password" label="Password" />
+      <PHForm onSubmit={onSubmit} defaultValues={defaultFormValue}>
+        <PHInput type="email" name="email" label="Email" required={true} />
+        <PHInput
+          type="password"
+          name="password"
+          label="Password"
+          required={true}
+        />
         <Button htmlType="submit">Login</Button>
         <Flex>
           <h4>Create account here</h4>
