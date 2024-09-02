@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useGetAllCarsQuery } from "../../redux/api/CarManagemntApi/carmanagementApi";
+import { useGetAllCarsQuery } from "../../redux/api/CarManagemntApi/carManagementApi.ts";
+
 import { Link } from "react-router-dom";
 import { Layout } from "antd";
 import NavbarUp from "../HomePage/Navbar/NavbarUp/NavbarUp";

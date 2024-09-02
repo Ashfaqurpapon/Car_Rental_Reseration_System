@@ -11,8 +11,8 @@ import { RootState } from "../store";
 // import { setUser } from "../feathers/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:8000/api",
-  // baseUrl: "https://productsweb.vercel.app/api",
+  // baseUrl: "http://localhost:8000/api",
+  baseUrl: "https://productsweb.vercel.app/api",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).carAuth.token;
 

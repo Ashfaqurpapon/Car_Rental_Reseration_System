@@ -6,8 +6,7 @@ import NavbarUp from "../HomePage/Navbar/NavbarUp/NavbarUp";
 import {
   useDeleteCarMutation,
   useGetAllCarsQuery,
-} from "../../redux/api/CarManagemntApi/carmanagementApi";
-
+} from "../../redux/api/CarManagemntApi/carManagementApi";
 const CarListingForDelete = () => {
   const { data: carsData } = useGetAllCarsQuery(undefined);
   const [deleteCar] = useDeleteCarMutation();

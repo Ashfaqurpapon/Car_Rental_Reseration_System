@@ -66,11 +66,11 @@ const BookingCard: React.FC<{ booking: any }> = ({ booking }) => {
     time: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     const toastId = toast.loading("Booking.....");
     e.preventDefault();
     try {

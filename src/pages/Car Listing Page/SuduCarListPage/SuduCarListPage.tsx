@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import "./SuduCarListPage.css";
 
 import availablecarImage from "./availablecar image1.webp";
-import { useGetAllCarsQuery } from "../../../redux/api/CarManagemntApi/carmanagementApi";
 
+import { useGetAllCarsQuery } from "../../../redux/api/CarManagemntApi/carManagementApi";
 const SuduCarListPage = () => {
   const { data: carsData } = useGetAllCarsQuery(undefined);
 

@@ -4,10 +4,11 @@ import PHInput from "../../PHForm/PHInput";
 import { FieldValues } from "react-hook-form";
 import { CarTypes } from "../../types/CarTypes";
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   useGetSingleCarQuery,
   useUpdateCarMutation,
-} from "../../redux/api/CarManagemntApi/carmanagementApi";
+} from "../../redux/api/CarManagemntApi/carManagementApi";
 import { toast } from "sonner";
 
 const UpdateCar = () => {

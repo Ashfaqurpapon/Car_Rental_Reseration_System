@@ -1,4 +1,3 @@
-import CarListingPage from "../pages/Car Listing Page/CarListingPage/CarListingPage";
 import MyAllBookings from "../pages/UserInfoPage/MyAllBookings";
 import UserDashboard from "../tempCompo/UserDashboard";
 export const userPaths = [

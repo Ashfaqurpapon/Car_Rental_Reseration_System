@@ -5,7 +5,6 @@ import { selectCurrentUser, TUser } from "../../redux/features/carAuthSlice";
 import { adminPaths } from "../../routes/admin.routes";
 import { userPaths } from "../../routes/user.routes";
 import { sidebarItemsGenerator } from "../../utils/sidebarItemsGenerator";
-import Navbar from "../../pages/HomePage/Navbar/Navbar";
 
 const { Sider } = Layout;
 

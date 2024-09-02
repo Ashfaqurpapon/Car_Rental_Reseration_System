@@ -1,5 +1,5 @@
 import { Layout } from "antd";
-import Navbar from "../HomePage/Navbar/Navbar";
+
 import NavbarUp from "../HomePage/Navbar/NavbarUp/NavbarUp";
 import "./AboutUs.css"; // Import the CSS file
 import Sidebar from "../../PHForm/layout/Sidebar";

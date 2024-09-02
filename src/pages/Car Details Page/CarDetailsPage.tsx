@@ -1,9 +1,10 @@
 import "./CarDetailsPage.css";
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   useBookACarMutation,
   useGetSingleCarQuery,
-} from "../../redux/api/CarManagemntApi/carmanagementApi";
+} from "../../redux/api/CarManagemntApi/carManagementApi.ts";
 import { CarTypes } from "../../types/CarTypes";
 import { useState } from "react";
 import { Layout } from "antd";
@@ -56,11 +57,11 @@ const CarDetailsPage = () => {
     createdAt: fetchedCar.updatedAt,
     updatedAt: fetchedCar.updatedAt,
   };
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     const toastId = toast.loading("Booking.....");
     e.preventDefault();
     try {
