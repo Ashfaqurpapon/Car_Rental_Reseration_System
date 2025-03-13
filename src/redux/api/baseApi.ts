@@ -12,10 +12,9 @@ import { RootState } from "../store";
 
 const baseQuery = fetchBaseQuery({
   // baseUrl: "http://localhost:8000/api",
-  baseUrl: "https://productsweb-qnta594cb-ashfaqur-papon.vercel.app/api",
+  baseUrl: "https://productsweb.vercel.app/",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).carAuth.token;
-
     if (token) {
       headers.set("authorization", `Bearer ${token}`);
     }
